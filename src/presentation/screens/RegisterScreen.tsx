@@ -15,13 +15,13 @@ import { registerStyles as styles } from "../styles/register.styles";
 
 export function RegisterScreen({ navigation }: any) {
   const { register, loading, error } = useAuthViewModel();
+  const defaultRole = "cliente";
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [isStaff, setIsStaff] = useState(false);
-  const [role, setRole] = useState("cliente");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +34,7 @@ export function RegisterScreen({ navigation }: any) {
       firstName.trim(),
       lastName.trim(),
       isStaff,
-      role.trim(),
+      defaultRole,
       phone.trim(),
       address.trim()
     );
@@ -52,8 +52,7 @@ export function RegisterScreen({ navigation }: any) {
     lastName.trim().length > 0 &&
     phone.trim().length > 0 &&
     address.trim().length > 0 &&
-    password.trim().length > 0 &&
-    (!isStaff || role.trim().length > 0);
+    password.trim().length > 0;
 
   return (
     <View style={styles.container}>
@@ -136,45 +135,6 @@ export function RegisterScreen({ navigation }: any) {
           numberOfLines={3}
           textAlignVertical="top"
         />
-
-        <View style={styles.roleSection}>
-          <Text style={styles.roleLabel}>Rol</Text>
-          <View style={styles.roleOptions}>
-            <TouchableOpacity
-              style={[
-                styles.roleOption,
-                styles.roleOptionLeft,
-                role === "cliente" && styles.roleOptionActive,
-              ]}
-              onPress={() => setRole("cliente")}
-            >
-              <Text
-                style={[
-                  styles.roleOptionText,
-                  role === "cliente" && styles.roleOptionTextActive,
-                ]}
-              >
-                Cliente
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.roleOption,
-                role === "admin" && styles.roleOptionActive,
-              ]}
-              onPress={() => setRole("admin")}
-            >
-              <Text
-                style={[
-                  styles.roleOptionText,
-                  role === "admin" && styles.roleOptionTextActive,
-                ]}
-              >
-                Admin
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
 
         <View style={styles.switchRow}>
           <Text style={styles.switchLabel}>Es staff</Text>

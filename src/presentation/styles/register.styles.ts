@@ -102,45 +102,6 @@ export const registerStyles = StyleSheet.create({
     fontWeight: "500",
     fontFamily: bodyFont,
   },
-  roleSection: {
-    marginBottom: 14,
-  },
-  roleLabel: {
-    fontSize: 14,
-    color: "#e2e8f0",
-    fontWeight: "600",
-    marginBottom: 8,
-    fontFamily: titleFont,
-  },
-  roleOptions: {
-    flexDirection: "row",
-  },
-  roleOption: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: "#1f2a44",
-    borderRadius: 8,
-    paddingVertical: 10,
-    alignItems: "center",
-    backgroundColor: "#0b1220",
-  },
-  roleOptionLeft: {
-    marginRight: 10,
-  },
-  roleOptionActive: {
-    borderColor: "#00e5ff",
-    backgroundColor: "#02212b",
-  },
-  roleOptionText: {
-    color: "#e2e8f0",
-    fontWeight: "500",
-    fontFamily: bodyFont,
-  },
-  roleOptionTextActive: {
-    color: "#00e5ff",
-    fontWeight: "700",
-    fontFamily: titleFont,
-  },
   button: {
     backgroundColor: "#00e5ff",
     paddingVertical: 14,
